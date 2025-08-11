@@ -1,11 +1,14 @@
+import com.back.App;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        experiment();
-        experiment2();
+        //experiment();
+        //experiment2();
+        new App(new Scanner(System.in)).run();
     }
 
     public static void experiment2(){   //모니터로 나가야하는 "하하하"가 나에게 돌아오게 하는법

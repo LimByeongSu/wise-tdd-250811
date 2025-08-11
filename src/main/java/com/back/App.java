@@ -14,17 +14,19 @@ public class App {
         System.out.println("==명언 앱==");
 
         while(true){
-            System.out.println("명령) ");
+            System.out.print("명령) ");
             String cmd = sc.nextLine();
 
-            if(cmd.equals("등록")){
-                System.out.println("명언 : ");
-                String saying = sc.nextLine();
-                System.out.println("작가 : ");
-                String author = sc.nextLine();
-
-            }else if(cmd.equals("종료")){
-                break;
+            switch (cmd){
+                case "등록" -> {
+                    System.out.print("명언 : ");
+                    String saying = sc.nextLine();
+                    System.out.print("작가 : ");
+                    String author = sc.nextLine();
+                }
+                case "종료" -> {
+                    return;
+                }
             }
 
         }
