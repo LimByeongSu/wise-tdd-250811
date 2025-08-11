@@ -10,7 +10,7 @@ public class Main {
 
     public static void experiment2(){   //모니터로 나가야하는 "하하하"가 나에게 돌아오게 하는법
         //
-        System.out.println("안녕하세요");
+ /*       System.out.println("안녕하세요");
 
         PrintStream originOut = System.out;
 
@@ -23,12 +23,39 @@ public class Main {
         System.out.println("하하하");  //흐름이 모니터 방향이 아니기때문에 출력되지않음
 
         String outStr = outputStream.toString();    //값을 꺼냄
-        System.out.println(outStr); //현재 흐름이 내 저장소로 되어있기 때문에 다시 원래대로 바꿔야 모니터에 출력할수있ㅇ음
+        System.out.println(originOut); //현재 흐름이 내 저장소로 되어있기 때문에 다시 원래대로 바꿔야 모니터에 출력할수있ㅇ음
         printStream.close();
 
+        if(outStr.equals("하하하")) {
+            System.out.println("출력 결과가 일치합니다.");
+        } else {
+            System.out.println("출력 결과가 일치하지 않습니다.");
+        }
+
+        System.out.println(outStr);*/
+
+        System.out.println("안녕하세요");
+
+        PrintStream originalOut = System.out;
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+
+        System.setOut(printStream);
+
+        System.out.println("하하하");
+
+        String outStr = outputStream.toString();
+        System.setOut(originalOut);
+        printStream.close();
+
+        if(outStr.equals("하하하")) {
+            System.out.println("출력 결과가 일치합니다.");
+        } else {
+            System.out.println("출력 결과가 일치하지 않습니다.");
+        }
 
         System.out.println(outStr);
-
     }
 
     public static void experiment(){    //키보드로 입력받지 않고 선입력 하는 방법
